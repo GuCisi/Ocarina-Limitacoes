@@ -4,6 +4,11 @@ Short vertical animado (1440x2560, 30 fps, 70,8 s) sobre como as limitações t�
 criação de The Legend of Zelda: Ocarina of Time. Narração em português, personagens 2D em um mundo 3D de desenho
 animado, efeitos sonoros e trilha sintetizados.
 
+## Assista
+
+- No repositório (1080x1920, 44 MB): [`video/nada-mal-para-oito-fotos-1080p.mp4`](video/nada-mal-para-oito-fotos-1080p.mp4)
+- Em 2K (1440x2560, 130 MB): [Release v1.0](https://github.com/GuCisi/Ocarina-Limitacoes/releases/tag/v1.0)
+
 Feito com [Remotion](https://www.remotion.dev/) + three.js, a partir da skill
 [claude-animated-shorts](https://github.com/mromidev/claude-animated-shorts) (ver `THIRD_PARTY_NOTICES.md`).
 
@@ -56,7 +61,7 @@ Para refazer o som: `pip install numpy scipy pillow edge-tts`, depois `python tt
 - As fusões entre cenas estão desligadas (`XFADE = {}` em `timeline.ts`): um segundo canvas em 2K derruba o contexto
   de vídeo em placas integradas.
 - `scripts/stills.mjs` espera o Chrome em `C:/Program Files/Google/Chrome/Application/chrome.exe`; ajuste em outros sistemas.
-- O vídeo renderizado não está no repositório (passa de 100 MB).
+- O vídeo em 2K passa de 100 MB, o limite por arquivo do GitHub: por isso fica na Release, e o repositório guarda uma cópia em 1080p.
 
 ## Fontes dos fatos
 
