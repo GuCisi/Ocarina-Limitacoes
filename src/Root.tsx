@@ -2,12 +2,14 @@ import "./index.css";
 import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
+import { OcarinaShort, OCARINA_FRAMES } from "./videos/ocarina/Ocarina";
 
 // Each <Composition> is an entry in the sidebar!
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition id="OcarinaShort" component={OcarinaShort} durationInFrames={OCARINA_FRAMES} fps={30} width={1080} height={1920} />
       <Composition
         // You can take the "id" to render a video:
         // npx remotion render HelloWorld

@@ -5,3 +5,18 @@ dist
 
 # Ignore the output video from Git but not videos you import into src/.
 out
+
+# working copies, backups and caches of the ocarina short (not needed to rebuild it)
+src/videos/ocarina_*/
+src/sandboxes/
+backup/
+__pycache__/
+shorts/ocarina/audio/_cache/
+shorts/ocarina/audio/_*.py
+!shorts/ocarina/audio/out/
+shorts/ocarina/audio/out/voice.wav
+shorts/ocarina/audio/out/music.wav
+shorts/ocarina/audio/out/sfx.wav
+shorts/ocarina/voice/raw.*
+shorts/ocarina/voice/raw_words.json
+shorts/ocarina/voice/test/
