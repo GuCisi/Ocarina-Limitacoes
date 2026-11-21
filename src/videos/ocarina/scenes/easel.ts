@@ -248,7 +248,7 @@ export const easel: Scene = {
     if ((f >= 1000 && f < 1006) || (f >= 1009 && f < 1015)) { col = [0.5, 5, 0.9]; glow = 1; }
     led.color.setRGB(...col);
     ledW.set(0.12, 0.11, 0.26); con.localToWorld(ledW);
-    if (glow) out.fx.push({ key: col[0] > 1 ? "eslLedR" : "eslLedG", cw: 128, ch: 128, draw: col[0] > 1 ? (p) => { glowDot(p); p.g.globalCompositeOperation = "source-atop"; p.g.fillStyle = "rgba(255,60,40,0.75)"; p.g.fillRect(0, 0, 128, 128); } : (p) => { glowDot(p); p.g.globalCompositeOperation = "source-atop"; p.g.fillStyle = "rgba(80,255,120,0.7)"; p.g.fillRect(0, 0, 128, 128); },
+    if (glow) out.fx.push({ key: col[0] > 1 ? "eslLedR" : "eslLedG", cw: 128, ch: 128, draw: col[0] > 1 ? (p) => { glowDot(p); p.g.globalCompositeOperation = "source-atop"; p.g.fillStyle = "rgba(255,60,40,0.75)"; p.g.fillRect(0, 0, 128, 128); p.g.globalCompositeOperation = "source-over"; } : (p) => { glowDot(p); p.g.globalCompositeOperation = "source-atop"; p.g.fillStyle = "rgba(80,255,120,0.7)"; p.g.fillRect(0, 0, 128, 128); p.g.globalCompositeOperation = "source-over"; },
       x: ledW.x, y: ledW.y, z: ledW.z + 0.02, w: 0.22, h: 0.22, soft: true, add: true, glow: 2.2 });
     const top = V(STOOL.x, CON_Y + 0.34, STOOL.z);
     // smoke wisps from f928, the big poof with sparks at f933, a few lazy wisps after

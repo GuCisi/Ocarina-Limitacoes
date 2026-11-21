@@ -38,6 +38,10 @@ export class Pool {
         const r = rs[0], i = this.free.findIndex((x) => x.w === r.w && x.h === r.h);
         e = i >= 0 ? this.free.splice(i, 1)[0] : makeEntry(r.w, r.h);
         const g = e.cv.getContext("2d")!;
+        // a recycled canvas keeps the 2D state its last drawing left behind (composite mode, alpha, filter, dash...):
+        // one drawing that set "source-atop" made every later drawing on that canvas come out transparent (holes in
+        // the ground shadows of the golden shots). Re-assigning the width resets the whole state and clears the canvas.
+        e.cv.width = e.w;
         g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, e.w, e.h); g.setTransform(r.k, 0, 0, r.k, 0, 0);
         r.draw(new Pen(g));
         e.tex.needsUpdate = true;
